@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <form action="/answer" method="POST"></form>
+    <title>Question</title>
+</head>
+
+<body>
+    {% block content %}
+    <h1> {{questions.question}}</h1>
+
+
+    <form action="/answer" method="POST">
+        {% for choice in questions.choices %}
+        <p><input type="radio" name="ANSWERNOW" value="{{ choice }}"> {{ choice}}</p>
+
+        {% endfor %}
+        <button>Submit</button>
+        {% endblock %}
+
+</body>
+
+</html>
